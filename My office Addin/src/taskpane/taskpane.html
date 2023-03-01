@@ -1,0 +1,112 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+
+    <link href="../../App.css" rel="stylesheet" type="text/css" />
+    <script src="../../App.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" />
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" />
+
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+    <script src="taskpane.js" type="text/javascript"></script>
+    <style type="text/css">
+      #status {
+        height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page content -->
+    <!-- The following HTML includes a Div with an ID of 'status' that we write to in code from the WD_OpenXML_js.js file  -->
+    <!-- It also includes two buttons that we wire up click events for in the taskpane.js file  -->
+    <!-- And it includes the text area for displaying the OOXML used by the Get and Set functions in the taskpane.js file  -->
+
+    <div id="content-header">
+      <div class="padding ms-font-xl" style="text-align: center">Get, Set, and Edit OOXML</div>
+
+      <div id="content-main">
+        <div class="padding ms-font-s-plus">
+          <div id="Content">
+            <p>
+              Select sample content in the document or add content and then select it. Then click 'Get...' below to
+              display the Office Open XML (OOXML) markup for the selection in the text area of this task pane (using
+              getSelectedDataAsync).
+            </p>
+            <p>
+              When you click 'Insert...' below, the Set function in this app coerces the OOXML shown in the text area to
+              add it to the document at the active selection point.
+            </p>
+            <button id="Potato">Potato</button>
+            <div style="margin-top: 10px; margin-bottom: 10px; color: #2a8dd4; text-align: center">
+              <button id="getOOXMLData" class="ms-Button ms-Button--command">
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--circlePlus"></i></span>
+                <span class="ms-Button-label">Get Selected Content as OOXML</span>
+                <span class="ms-Button-description">Description of the action this button takes</span>
+              </button>
+            </div>
+            <textarea id="dataOOXML" style="height: 325px"></textarea>
+
+            <div style="margin-top: 10px; color: #2a8dd4; text-align: center">
+              <button id="setOOXMLData" class="ms-Button ms-Button--command">
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--circlePlus"></i></span>
+                <span class="ms-Button-label">Insert Content from the Markup</span>
+                <span class="ms-Button-description">Description of the action this button takes</span>
+              </button>
+            </div>
+            <div id="status"></div>
+          </div>
+          <div id="Tips" style="margin-top: 20px">
+            <p>
+              <b>Use the text area as a scratch pad:</b> You can use the task pane text area to test your edited markup.
+              Copy and paste in that text area as needed. Then, click the 'Insert...' button to test your markup.
+            </p>
+            <p style="margin-top: 20px">
+              <b>Tip:</b> Display formatting marks (such as paragraph marks) when selecting document content to ensure
+              that you select only what's needed for your markup. On the Home tab, in the Paragraph group, click the
+              paragraph mark icon.
+            </p>
+            <p style="margin-top: 20px">
+              <a target="_blank" href="https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word-add-in"
+                >Find more samples online...</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- Word-Add-in-Get-Set-EditOpen-XML, https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML
+
+
+Copyright (c) Microsoft Corporation
+All rights reserved.
+
+MIT License:
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
